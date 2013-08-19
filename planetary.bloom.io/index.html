@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta property="og:title" content="Planetary: A Visual Music Player for iPad by Bloom Studio, Inc." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://planetary.bloom.io" />
+  <meta property="og:image" content="http://planetary.bloom.io/images/planetaryIcon.png" />
+  <meta property="og:site_name" content="Planetary: A Visual Music Player for iPad by Bloom Studio, Inc." />
+  <meta property="fb:admins" content="659436583, 2913134, 510008187" />
+  <meta property="og:description"
+        content="An all-new, stunningly beautiful way to explore your music collection. Available only on iPad." />
+  <title>Planetary: A Visual Music Player for iPad by Bloom Studio, Inc.</title>
+  <script src="http://use.typekit.com/rdl4muo.js"></script>
+  <script>
+    // <3 Small Batch
+    try{Typekit.load();}catch(e){}      
+    // :-p Google
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20672308-4']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->    
+  <style>
+/*------------------------------------*\
+  RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE:WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+body{
+  line-height:1;
+}
+ol,ul{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+  content:'';
+  content:none;
+}
+/* remember to define visible focus styles!
+:focus{
+  outline:?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
+
+table{
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/*------------------------------------*\
+  MAIN
+\*------------------------------------*/
+/* GO! */  
+  
+    body {
+      font-family: "ff-unit-rounded-web-1","ff-unit-rounded-web-2",sans-serif;
+      background: #000;
+      color: #fff;
+      width: 100%;
+      line-height:1.25;      
+    }
+    #planetary {
+      width: 1000px;
+      margin: 0px auto;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 18px;      
+    }
+    
+    #header {
+      background: #000 no-repeat url('images/headerImage.jpg');
+      height: 510px;
+      position: relative;
+    }
+    #header h1 {
+      text-transform: uppercase;
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      padding: 53px 0 50px 122px;
+      position: absolute;
+      top: 300px;
+      background: no-repeat url('images/logo.png') 12px -10px;
+    }
+    #header h1 .char1 {
+      font-weight: 900;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 5px;
+    }
+    #header h1 .char2 {
+      font-weight: 800;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 4px;
+    }
+    #header h1 .char3 {
+      font-weight: 700;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 3px;
+    }
+    #header h1 .char4 {
+      font-weight: 600;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 2px;
+    }
+    #header h1 .char5 {
+      font-weight: 500;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 1px;
+    }
+    #header h1 .char6 {
+      font-weight: 500;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 1px;
+    }
+    #header h1 .char7 {
+      font-weight: 400;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 1px;
+    }
+    #header h1 .char8 {
+      font-weight: 400;
+      text-shadow: rgba(255,255,255,1.0) 0px 0px 1px;
+    }
+    #header h1 .char9 {
+      font-weight: 400;
+    }
+    #header h1 a {
+      text-transform: lowercase;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #80d8f8;
+      margin-left: -3px;
+    }
+    #header h1 a span {
+      font-weight: 400;
+    }
+    #header p {
+      font-size: 18px;
+      font-weight: 400;
+      position: absolute;
+      top: 422px;
+      left: 68px;      
+    }
+    #header p a {
+      color: #80d8f8;
+      text-decoration: none;
+    }
+    #header .download {
+      display: block;
+      position: absolute;
+      right: 68px;
+      height: 44px;
+      line-height: 42px;
+      margin-top: 0px;
+      padding-left: 40px;
+      padding-right: 10px;
+      background: #000 no-repeat url('images/downloadIcon.png') 3px 50%;
+      color: rgba(180,235,255,0.85);
+      text-align: center;
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      -webkit-box-shadow: 0px 0px 15px #6cf;
+      -moz-box-shadow: 0px 0px 15px #6cf;
+      -ms-box-shadow: 0px 0px 15px #6cf;
+      -o-box-shadow: 0px 0px 15px #6cf;
+      /*border: 2px solid rgba(180,235,255,0.5);*/
+      box-shadow: 0px 0px 10px rgba(180,235,255,0.85);
+      text-shadow: #6cf 0px 0px 8px, #7df 0px 0px 4px;
+      font-size: 24px;
+      top: 420px;
+    }
+    #header .tweetlike {
+      position: absolute;
+      right: 50px;
+      /*bottom: 0px;*/
+      top: 380px;
+    }
+    
+    #about {
+      position: relative;
+      background: url('images/sun.png') no-repeat -24px -4px;
+      width: 1000px;
+      height: 510px;
+    }
+    #about h3 {
+      margin: 113px 0 0 187px;
+    }
+    #about p {
+      font-weight: 300;
+      font-size: 13px;
+      margin: 4px 0 0 187px;
+    }
+    #artists {
+      position: absolute;
+      left: 68px;
+      top: 50px;
+      width: 425px;
+      height: 210px;
+    }
+    #albums {
+      position: absolute;
+      left: 500px;
+      top: 50px;
+      background: url('images/planet.png') no-repeat 7px 41px;
+      width: 425px;
+      height: 210px;
+    }
+    #tracks {
+      position: absolute;
+      top: 260px;
+      left: 68px;
+      background: url('images/moon.png') no-repeat 5px 37px;
+      width: 425px;
+      height: 250px;
+    }
+    #wheel {
+      position: absolute;
+      top: 260px;
+      left: 500px;
+      background: url('images/alphaWheel.png') no-repeat 9px 37px;
+      width: 425px;
+      height: 250px;
+    }
+
+    #trailer {
+      position: relative;
+    }
+    #trailer h3 {
+      position: relative;
+      display: block;
+      margin: 0px 60px 15px 60px;
+      text-align: center;
+      background: no-repeat url('images/hr-right.jpg') right 5px, no-repeat url('images/hr-left.jpg') left 5px;
+    }
+    #trailer iframe {
+      margin: 20px 200px 0px 200px;
+    }
+    
+    #gallery {
+      position: relative;
+      margin-top: 20px;
+    }
+    #gallery h3 {
+      position: relative;
+      display: block;
+      margin: 0px 60px 15px 60px;
+      text-align: center;
+      background: no-repeat url('images/hr-right.jpg') right 5px, no-repeat url('images/hr-left.jpg') left 5px;
+    }
+    #gallery ul {
+      position: relative;
+      height: 128px;
+      margin: 0 0 60px 68px;
+      list-style: none;
+    }
+    #gallery li {
+      position: relative;
+      display: block;
+      float: left;
+      margin-right: 14px;
+    }
+    #gallery a, #gallery img {
+      position: relative;
+      display: block;
+    }
+    
+    #testimonials {
+      position: relative;
+      clear: both;
+      margin: 0 58px;
+      height: 134px;
+    }
+    #testimonials h3 {
+      position: relative;
+      display: block;
+      margin-bottom: 15px;
+      text-align: center;
+      background: no-repeat url('images/hr-right-2.jpg') right 3px, no-repeat url('images/hr-left-2.jpg') left 3px;
+    }
+    
+    .testimonial {
+      position: relative;
+      width: 282px;
+      height: 114px;
+      float: left;
+      margin-left: 10px;
+      background: url('images/roundedButton.png');
+    }
+    .testimonial .what {
+      text-align: justify;
+      font-size: 12px;
+      margin: 16px 8px 0px 8px;
+    }
+    .testimonial .who {
+      text-align: right;
+      position: absolute;
+      right: 10px;
+      bottom: 20px;
+      letter-spacing: 0.1em;
+    }
+    
+    #contact {
+      position: relative;
+      clear: both;
+      margin: 100px 68px 0px 68px;
+      font-size: 32px;
+      height: 80px;
+    }
+    #contact a {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    #contact .email {
+      position: absolute;
+      width: 33%;
+      text-align: left;
+      left: 0%;
+    }
+    #contact .download {
+      position: absolute;
+      width: 33%;
+      text-align: center;
+      right: 33%;
+    }
+    #contact .more {
+      position: absolute;
+      width: 33%;
+      text-align: right;
+      left: 66%;
+    }
+    
+    #footer {
+      margin: 0 68px 50px 68px;
+      height: 125px;
+      position: relative;
+    }
+    #thanks {
+      font-size: 12px;
+      width: 25%;
+      text-align: left;
+      left: 0;
+      bottom: 5px;
+      position: absolute;
+      color: #fff;
+    }
+    #thanks a {
+      color: #6cf;
+      text-decoration: none;
+    }
+    #libcinder img {
+      vertical-align: bottom;
+    }
+    #libcinder {
+      font-size: 13px;
+      width: 25%;
+      text-align: right;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }    
+    #appstore {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    #copyright {
+      margin-bottom: 50px;
+      color: #888;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    #faq {
+      margin-top: 68px;
+    }
+    #faq h3 {
+      position: relative;
+      display: block;
+      margin: 0px 60px 15px 60px;
+      text-align: center;
+      background: no-repeat url('images/hr-right.jpg') right 5px, no-repeat url('images/hr-left.jpg') left 5px;
+    }    
+    #faq h4 {
+      margin: 20px 200px 0px 200px;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    #faq h4 a {
+      color: white;
+      text-decoration: none;
+    }
+    #faq a {
+      color: #6cf;
+    }
+    #faq p {
+      margin: 10px 200px 0px 220px;
+    }
+    #faq p.cta {
+      margin: 40px 200px 40px 200px;
+    }
+    #faq blockquote {
+      display: block;
+      margin: 10px 200px 0px 250px;
+      color: #ffc;
+    }
+    #faq div.answer {
+      position: relative;
+      width: 1000px;
+    }
+    #faq p.answer {
+      position: relative;
+      width: 580px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="planetary">
+  
+    <div id="header">
+      <h1>
+        <!-- <3 http://letteringjs.com/ but it's done now... -->
+        <span class="char1">P</span><span class="char2">l</span><span class="char3">a</span><span class="char4">n</span><span class="char5">e</span><span class="char6">t</span><span class="char7">a</span><span class="char8">r</span><span class="char9">y</span>
+        <a href="http://bloom.io"><span>by</span> Bloom</a>
+      </h1>
+      <p>An all-new, stunningly beautiful way to explore your music collection.
+        <br><a href="http://itunes.apple.com/app/planetary/id432462305">Version 2.0 available now for iPad and iPad 2.</a></p>
+      <a href="http://itunes.apple.com/app/planetary/id432462305" class="download">Free Download</a>
+      <div class="tweetlike">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://planetary.bloom.io" data-count="horizontal">Tweet</a>
+        <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fplanetary.bloom.io&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>        
+      </div>
+    </div>
+
+    <div id="about">
+      <div id="artists">
+        <h3>Artists are Stars</h3>
+        <p>Every star in Planetary represents an artist from your music library.</p>
+      </div>
+      <div id="albums">
+        <h3>Albums are Planets</h3>
+        <p>They orbit around their artist star. The planet surface is derived from the album cover art. No two planets are the same.</p>
+      </div>
+      <div id="tracks">
+        <h3>Tracks are Moons</h3>
+        <p>They orbit at a speed based on the length of the track. The size of the moon is based on the play count.</p>
+      </div>
+      <div id="wheel">
+        <h3>Filter Artists by Letter</h3>
+        <p>Create a constellation of highlighted stars by filtering artist names by their first character.</p>
+      </div>
+    </div>
+
+    <div id="gallery">
+      <h3>Gallery</h3>
+      <ul>
+        <li><a href="images/gallery/bloom_planetary_0.jpg"><img src="images/gallery/thumb_0.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_1.jpg"><img src="images/gallery/thumb_1.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_2.jpg"><img src="images/gallery/thumb_2.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_3.jpg"><img src="images/gallery/thumb_3.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_4.jpg"><img src="images/gallery/thumb_4.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_5.jpg"><img src="images/gallery/thumb_5.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_6.jpg"><img src="images/gallery/thumb_6.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+        <li><a href="images/gallery/bloom_planetary_7.jpg"><img src="images/gallery/thumb_7.jpg" width="96" height="128" alt="Planetary screenshot"></a></li>
+      </ul>
+    </div>
+
+    <div id="trailer">
+      <h3>Trailer</h3>
+      <iframe src="http://player.vimeo.com/video/23168163" width="600" height="450" frameborder="0"></iframe>    
+    </div>
+
+    <!--
+    <div id="testimonials">
+      <h3>Testimonials</h3>
+      <div class="testimonial">
+        <p class="what">"At first I was like 'hmm' then I was all 'WHOA' then I went and ate a sandwich and then I came back and was still totally like 'DAMN, THAT IS LIKE WHOA.'"</p>
+        <p class="who">- Tim O'RLY</p>
+      </div>
+      <div class="testimonial">
+        <p class="what">"Bar none, the best looking app out there or my name isn't Archibald Greeble Esthe 5th."</p>
+        <p class="who">- Rev. Archibald Greeble</p>
+      </div>
+      <div class="testimonial">
+        <p class="what">"Even if they charged $10, this app would still be on my must-have list. It is easily the best planet themed music player I have seen in the last half year."</p>
+        <p class="who">- Pink</p>
+      </div>
+    </div>-->
+    
+    <div id="faq">
+      <h3>F.A.Q.</h3>
+
+      <p class="cta">Select a question to reveal the answer (or <a href="#" id="showall">show everything</a>). If you don't see your question listed, please <a href="mailto:planetary@bloom.io">email us</a> and we'll try to get back to you as quickly as we can!</p>
+
+      <h4 id="ios5"><a href="#ios5">Does Planetary work with iOS 5?</a></h4>
+      <div class="answer">
+        <p>We're aware of a couple of glitches but in general Planetary works fine on iOS 5. The main glitch is to do with play/pause, which can get "stuck" on pause. We're working on a fix for this.</p>
+        <p>If Planetary won't work for you on iOS 5, try restarting your iPad or deleting and re-installing the app. If that fails try a full music sync with iTunes, which can un-stick things. If that doesn't work, please let us know and we'll try to help.</p>
+      </div>
+      
+      <h4 id="whats-new"><a href="#whats-new">What's new in Planetary 2.0?</a></h4>
+      <div class="answer">
+        <p>Planetary 2.0 features a full graphical update: new galaxy detail, solar flares, eclipses, atmospheric glow, accretion disks and much more fine detail at planet and moon level. Additional detail is available for iPad 2.</p>        
+        <p>To address your most popular feature requests we've added in-app support for playlist selection and shuffle/repeat modes.</p>
+        <p>Other new features include optional automatic camera motion (great for long playlists!), gyroscope support for iPad 2 and scale and speed sliders to adjust the universe to your tastes.</p>
+        <p>Several small bugs with version one are also fixed and Planetary 2.0 has much better interactive performance, especially when flying between planets and when interacting with the playhead slider.</p>
+        <p>Many thanks for all the feedback and kind words we received about version 1 - keep it coming!</p>
+      </div>
+
+      <h4 id="airplay"><a href="#airplay">Will Planetary work with Airplay?</a></h4>
+      <p class="answer">Yes! But only for audio at the moment. We don’t have our own controls for Airplay but you can find Apple’s controls by double-tapping the home button and swiping to the right. You should be able to access your remote speakers there. This mysterious interface will also let you change the brightness and volume controls as a bonus!</p>
+
+      <h4 id="homesharing"><a href="#homesharing">Will Planetary work with Home Sharing so I can access my iTunes library across the network?</a></h4>
+      <div class="answer">
+        <p>Sadly home sharing playback isn't possible in Planetary at the moment. Apple says:</p>
+        <blockquote>"Starting in iOS 4, the built-in iPod and Videos apps can play media from shared libraries using Home Sharing. However, third-party apps using the Media Player framework still have access only to the device iPod library."</blockquote>
+        <p>We're really hopeful that this will change in future.</p>
+      </div>
+
+      <h4 id="playlists"><a href="#playlists">Does Planetary support playlists?</a></h4>
+      <p class="answer">Yes! Planetary 2.0 adds support for playlists. You can choose to view a playlist much the same way as you choose to view artists by first letter. When you select a playlist the matching artists are highlighted and the playlist is started at the first track. Tapping the zoom-to-current-track button flies you all the way in. Tapping next and previous seamlessly flies you from one artist system to another at your chosen level of detail (artist, album or track). You can also set a playlist playing the iPod player app and then switch back to Planetary.</p>
+
+      <h4 id="shuffle"><a href="#shuffle">Does Planetary support shuffle or repeat?</a></h4>
+      <p class="answer">Yes! Planetary 2.0 adds support for shuffle and repeat within the app itself. Settings are shared with the iPod player app too, so you can change them there as well.</p>
+
+      <h4 id="composers"><a href="#composers">What about sorting by album or composer name?</a></h4>
+      <p class="answer">Not yet! Planetary can only sort by first letter of artist names, then navigate via artists, albums, and tracks. Or you can choose a playlist. We've heard from a few people that they'd like to browse by album or composer name too, especially for compilations and for classical music. Hopefully this is something we can address in future.</p>
+
+      <h4 id="ports"><a href="#ports">Will you make a version of Planetary for iPhone, iPod Touch, Mac OS X, Windows, Android, Palm Pre or Blackberry Playbook?</a></h4>
+      <p class="answer">We'd like to bring Planetary to other platforms soon but we haven't done it yet! Our use of the <a href="http://libcinder.org">Cinder framework</a> should make our code easy to port when we do. For now Planetary is quite closely tied to the iPod library code and designed for gesture input on a tablet-sized display. Each new version will need careful adjustment to meet expectations set by the platform and our first iPad version. We definitely want to do it, we just need some time to make sure we do it right!</p>
+
+      <h4 id="sleep"><a href="#sleep">How do I stop the display from going to sleep?</a></h4>
+      <p class="answer">Display sleep can be controlled at the system level in the Settings app, under "Auto-Lock" in the General tab. Remember that it's related to the security features like passcode lock so be careful not to leave your iPad anywhere insecure if you disable the auto-lock!</p>
+                        
+      <h4 id="remote"><a href="#remote">Will Planetary control playback on my desktop computer like Apple's Remote app?</a></h4>
+      <p class="answer">Not right now, sorry. We're looking into this one, it should be a bit like streaming services only easier for us and you.</p>
+      
+      <h4 id="volume"><a href="#volume">How do you change the volume?</a></h4>
+      <p class="answer">The iPad has manual volume controls on the side of the device. If these are awkward to use for some reason you can also double-tap the home button to display the app tray and then swipe to the right to reveal audio controls including volume.</p>
+
+      <h4 id="playcounts"><a href="#playcounts">Will plays from Planetary update the play counts in iTunes? Will they be included in scrobbles to last.fm?</a></h4>
+      <p class="answer">Yes! We're using Apple's media player code so that plays are counted just like they are in the iPod player app. If you have scrobbling set up in iTunes your plays should be counted when you sync.</p>
+            
+      <h4 id="search"><a href="#search">Does Planetary have a search feature?</a></h4>
+      <p class="answer">Not at the moment. The Planetary experience is focused on browsing and exploring. For now we suggest switching between Planetary and the iPod app whenever you need to find something specific.</p>
+      
+      <h4 id="jailborked"><a href="#jailborked">Does Planetary work with jailbroken iPads?</a></h4>
+      <p class="answer">We've heard that people with jailbroken iPads are having trouble running Planetary. It's not something we've tested for but if it's affecting you you're not alone. Naturally this kind of issue comes with the jailbreaking territory but if we can fix it we will.</p>
+
+      <h4 id="everything-everything"><a href="#everything-everything">How can I show all my music at once?</a></h4>
+      <p class="answer">We limit the display to one letter of the alphabet or one playlist at a time to make sure the performance is good and the framerate is high. That said, if you want to display all your artists at once you can create a big playlist in iTunes and display that using Planetary. With very large collections this might cause instability and crashes resulting to low memory, but it's worth a try!</p>
+                        
+    </div>
+    
+    <div id="contact">    
+      <p class="email"><a href="mailto:planetary@bloom.io">Contact Us</a></p>
+      <p class="download"><a href="http://itunes.apple.com/app/planetary/id432462305">iPad Download</a></p>
+      <p class="more"><a href="http://blog.bloom.io/2011/07/11/creating-new-worlds/">Process</a></p>
+    </div>
+
+    <div id="footer">
+      <p id="appstore"><a href="http://itunes.apple.com/app/planetary/id432462305"><img src="images/appStoreBadge.png" alt="Available on the App Store" width="192" height="69"></a></p>
+      <p id="thanks">Thanks to: <a href="http://onecm.com">Ryan Alexander</a> for help with iPad Music Library API and multitouch gestures, <a href="http://planetpixelemporium.com/">JHT's Planetary Pixel Emporium</a> for planet textures, and NASA for <a href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html">permissive reuse policies</a>.</p>
+      <p id="libcinder"><a href="http://libcinder.org"><img src="images/madeWithCinder.png" alt="Made with Cinder" width="128" height="82"></a></p>
+    </div>
+    
+    <p id="copyright">&copy; Copyright 2011 Bloom Studio, Inc. All Rights Reserved.</p>
+
+  </div>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <!-- thank you! http://neteye.github.com/touch-gallery.html -->
+  <script type="text/javascript" src="jquery.touch-gallery-1.0.0.min.js"></script>
+  <script>
+  
+    // gallery: activate!
+    $('#gallery a').touchGallery();
+    
+    // collapse the overlong FAQs
+    $('.answer').hide();
+
+    // but allow to reveal all, for people who like to be thorough
+    $('#showall').click(function() {
+      $('.answer').slideDown();
+      return false;
+    });
+    
+    // or reveal one at a time
+    $('#faq h4 a').click(function() {
+      $(this).parent().next('.answer').slideToggle();
+      return false;
+    });
+    
+    // and if we came here with a #fragment, make sure it's open already
+    $(location.hash).next('.answer').show();
+    
+  </script>
+  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</body>
+</html>
