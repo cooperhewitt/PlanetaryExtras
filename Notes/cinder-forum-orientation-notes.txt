@@ -1,0 +1,67 @@
+RFC: iOS device orientation code - orientationChanged / OrientationEvent / getDeviceOrientation
+
+TL;DR: pull request here: https://github.com/cinder/Cinder/pull/43 ... please read, test and comment :)
+
+Quick links to other discussion threads and implementations:
+
+http://forum.libcinder.org/#topic/23286000000654062
+http://forum.libcinder.org/#topic/23286000000316005
+http://forum.libcinder.org/#topic/23286000000059026
+https://gist.github.com/836966
+
+I won't attempt to summarize these in detail but I post them here to acknowledge that I'm not the first person covering this ground in Cinder!
+
+Background:
+
+For now the only Cinder platform that supports multiple device orientations is iOS (iphone, ipod, ipad). That means all changes should be limited to AppCocoaTouch if possible.
+
+It seems like nobody wants resize to be called by default, and in the interests of OpenGL efficiency nobody wants Cinder to allow iOS to perform an animated transition for them by default. This is something Cinder-savvy people can handle for themselves. However in future it might be nice to have a default/good-enough implementation of orientation support that will call resize for you at least... I haven't done this yet :)
+
+In iOS there are two kinds of orientation: device orientation and interface orientation. These are separate because when the device is face up or face down you might not want to change the interface. There are only four possible interface orientations (portrait, landscape left, landscape right and upside down portrait) but there are three more device orientations (unknown, face up and face down).
+
+iOS will tell you when the device orientation changes. You can use fancy new Objective-C blocks to handle the change and use built-in macros to test if the orientation is landscape, portrait or a valid interface orientation:
+
+    [[NSNotificationCenter defaultCenter]
+        addObserverForName:@"UIDeviceOrientationDidChangeNotification"
+        object:nil 
+        queue:nil 
+        usingBlock: ^(NSNotification *notification) {
+            UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+            //
+            // things that depend on *device* orientation go here
+            //
+            if (UIDeviceOrientationIsValidInterfaceOrientation(orientation)) {        
+                //
+                // things that depend on *interface* orientation go here
+                //
+                if (UIDeviceOrientationIsPortrait(orientation)) {
+                    // portrait things here
+                }
+                else if (UIDeviceOrientationIsLandscape(orientation)) {
+                    // landscape things here
+                }
+            }
+        }
+    ]; 
+
+The enum values for UIDeviceOrientation and UIInterfaceOrientation match and seem to be used interchangably, at least when coerced. One of the other forum posts noted that the status bar, task manager and other interface elements are sometimes upside down, depending on how you handle orientation. This is how to fix that:
+
+    // make sure the task bar is shown on the correct side of the device            
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientation(orientation);
+
+
+Cinder Implementation:
+
+Here's the relevant pull request, which I'd like feedback on:
+https://github.com/cinder/Cinder/pull/43
+
+If you just want to know what it looks like as a user, see the sample app at:
+https://github.com/bloomtime/Cinder/tree/master/samples/iPhoneOrientation
+
+I decided to support both interface and device orientation in Cinder. I initially tried to just support device orientation but when I added a getter for the current orientation it wasn't always clear which one should be returned. The most Cinderful way (without messing with resize, as discussed) seems to be to provide a getter for both.
+
+
+
+Note: 
+
+I've writing this quickly because I'm keen to get feedback. Please don't take my terseness to imply that I think this stuff is finished or the-one-true-way! It's definitely coded to my strengths (I feel comfortable hacking miscellaneous bits of cinder, c++ and objective-c but I don't know much about iOS). If you know a better way or would like different behaviour let's work together on it here!

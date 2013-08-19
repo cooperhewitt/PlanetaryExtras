@@ -1,0 +1,18 @@
+Cinder Additions:
+
+Matrix32<T>
+Vec2<T>::rotated()
+AppCocoaTouch::getOrientation()
+Rect<T>::rotated()
+Rect<T>::rotate() (or multiply by matrix?)
+auto-resize for orientation events
+gl::drawStrokedRect
+better sphere code
+
+Planetary thoughts:
+
+One "Node" class plus "stylists" (TrackStylist etc.) that do the drawing
+Hits as callbacks from World with an ID
+Look into texture compression / combining textures.
+Hit states for all buttons.
+Button class that handles hit states (see SimpleButton in AS3)
