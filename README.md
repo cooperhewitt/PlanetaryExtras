@@ -6,4 +6,5 @@ Planetary Extras
 See also
 --
 
-* [Planetary](https://github.com/cooperhewitt/Planetary)
+* [Planetary source code](https://github.com/cooperhewitt/Planetary)
+* [Planetary object page on the Cooper-Hewitt collections website](http://collection.cooperhewitt.org/objects/35520989/)
