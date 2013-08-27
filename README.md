@@ -6,5 +6,6 @@ Planetary Extras
 See also
 --
 
+* [Planetary: collecting and preserving code as a living object](https://www.cooperhewitt.org/object-of-the-day/2013/08/26/planetary-collecting-and-preserving-code-living-object) (Cooper-Hewitt Object of the Day weblog)
 * [Planetary source code](https://github.com/cooperhewitt/Planetary)
 * [Planetary object page on the Cooper-Hewitt collections website](http://collection.cooperhewitt.org/objects/35520989/)
